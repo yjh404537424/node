@@ -20,18 +20,22 @@ var arr = new Array(6)
     arr[5] = 1;
 
     var arrNum = new Array();
-    for ( var i= 0; i < 100000; i++) {
-        arrNum[i] = Math.round(Math.random() * 2000);
+    for ( var i= 0; i < 10; i++) {
+        arrNum[i] = String(Math.round(Math.random() * 2000));
     }
 
-//console.log("before : "+arrNum);
+console.log("length : "+ arrNum.length);
 var t1 = new Date().getTime();
-//console.log("before : "+ t1);
+console.log("before : "+ t1);
+console.log(arrNum);
+for ( var i= 0; i < arrNum.length; i++) {
+        arrNum[i] = Number(arrNum[i]);
+}
 arrNum.sort(sortNumber);
 var t2 = new Date().getTime();
-//console.log("before : "+t2);
+console.log("after : "+t2);
     t = t2 - t1;
-//console.log("time: "+ t + "after:"+arrNum);
+console.log(arrNum);
 console.log("time: "+ t);
 
 
